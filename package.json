@@ -6,7 +6,7 @@
     "test": "lerna run test --stream",
     "build": "lerna run build --stream",
     "lint": "web-scripts lint --ignore-path .gitignore",
-    "commit": "web-scripts commit",
+    "commit": "web-scripts commit --path cz-lerna-changelog",
     "bootstrap": "lerna bootstrap --use-workspaces"
   },
   "workspaces": [
@@ -14,6 +14,7 @@
   ],
   "devDependencies": {
     "@spotify/web-scripts": "^1.0.0",
+    "cz-lerna-changelog": "^2.0.2",
     "husky": "^2.4.0",
     "lerna": "^3.15.0"
   },
