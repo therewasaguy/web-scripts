@@ -1,6 +1,5 @@
 language: node_js
 node_js:
-  - '8'
   - '10'
   - '12'
 branches:
@@ -19,12 +18,9 @@ before_script:
 script:
   - yarn lint
   - yarn test
-before_deploy:
-  - echo "//registry.npmjs.org/:_authToken=\${NPM_TOKEN}" >> $HOME/.npmrc 2> /dev/null
-  - git remote add pub https://${GH_TOKEN}@github.com/${TRAVIS_REPO_SLUG}.git -f
 deploy:
   provider: script
-  script: yarn lerna publish --conventional-commits --yes --git-remote pub
+  script: yarn release
   skip_cleanup: true
   on:
     node: '12'
